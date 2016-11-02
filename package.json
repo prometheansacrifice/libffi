@@ -1,0 +1,37 @@
+{
+  "name": "libffi",
+  "version": "3.2.2",
+  "scripts": {
+    "postinstall": "mkdir _build && ./autogen.sh && ./configure --prefix $(pwd)/_build && make && make install"
+  },
+  "exportedEnvVars": {
+    "LIBFFI_BUILD_DIR": {
+      "global": true,
+      "resolveAsRelativePath": true,
+      "val": "./_build/"
+    },
+    "LIBFFI_CFLAGS": {
+      "global": true,
+      "val": "-I$LIBFFI_BUILD_DIR/lib/libffi-3.2.1/include"
+    },
+    "LIBFFI_LIBS": {
+      "global": true,
+      "val": "-L$LIBFFI_BUILD_DIR/lib"
+    }
+  },
+  "dependencies": {
+    "nopam": "https://github.com/yunxing/nopam.git",
+    "dependency-env": "https://github.com/npm-ml/dependency-env.git"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/libffi/libffi.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/libffi/libffi/issues"
+  },
+  "homepage": "https://github.com/libffi/libffi#readme"
+}

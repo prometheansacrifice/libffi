@@ -1,8 +1,8 @@
 {
   "name": "libffi",
-  "version": "3.2.4",
+  "version": "3.2.9",
   "scripts": {
-    "postinstall": "mkdir _build && ./configure --prefix $(pwd)/_build && make && make install"
+    "postinstall": "mkdir -p _build/lib64 _build/lib && ./configure --enable-shared=no --prefix $(pwd)/_build && make && make install && cp -rf _build/lib64/. _build/lib"
   },
   "exportedEnvVars": {
     "LIBFFI_BUILD_DIR": {

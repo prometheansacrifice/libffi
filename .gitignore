@@ -9,7 +9,6 @@ Makefile.in
 aclocal.m4
 compile
 config.*
-configure
 depcomp
 doc/libffi.info
 *~

@@ -1,6 +1,6 @@
 {
   "name": "libffi",
-  "version": "3.2.3",
+  "version": "3.2.4",
   "scripts": {
     "postinstall": "mkdir _build && ./configure --prefix $(pwd)/_build && make && make install"
   },

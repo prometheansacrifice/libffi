@@ -1,6 +1,6 @@
 {
   "name": "libffi",
-  "version": "3.2.9",
+  "version": "3.2.10",
   "scripts": {
     "postinstall": "mkdir -p _build/lib64 _build/lib && ./configure --enable-shared=no --prefix $(pwd)/_build && make && make install && cp -rf _build/lib64/. _build/lib"
   },
@@ -16,7 +16,13 @@
     },
     "LIBFFI_LIBS": {
       "global": true,
-      "val": "-L$LIBFFI_BUILD_DIR/lib"
+      "val": "-L$LIBFFI_BUILD_DIR/lib -lffi"
+    },
+    "LIBRARY_PATH": {
+      "global": true,
+      "resolveAsRelativePath": true,
+      "globalCollisionBehavior": "joinPath",
+      "val": "./_build/lib"
     }
   },
   "dependencies": {

@@ -1,33 +1,29 @@
 {
   "name": "libffi",
   "version": "3.2.10",
-  "scripts": {
-    "postinstall": "mkdir -p _build/lib64 _build/lib && ./configure --enable-shared=no --prefix $(pwd)/_build && make && make install && cp -rf _build/lib64/. _build/lib"
-  },
-  "exportedEnvVars": {
-    "LIBFFI_BUILD_DIR": {
-      "global": true,
-      "resolveAsRelativePath": true,
-      "val": "./_build/"
+  "esy": {
+    "build": [
+      "./configure --enable-shared=no --prefix $cur__install && make && make install"
+    ],
+    "exportedEnv": {
+      "LIBFFI_BUILD_DIR": {
+        "scope": "global",
+        "val": "$libffi__install"
+      },
+      "LIBFFI_CFLAGS": {
+        "scope": "global",
+        "val": "-I$LIBFFI_BUILD_DIR/lib/libffi-3.2.1/include"
+      },
+      "LIBFFI_LIBS": {
+        "scope": "global",
+        "val": "-L$LIBFFI_BUILD_DIR/lib -lffi"
+      },
+      "LIBRARY_PATH": {
+        "scope": "global",
+        "val": "$libffi__install/lib:$LIBRARY_PATH"
+      }
     },
-    "LIBFFI_CFLAGS": {
-      "global": true,
-      "val": "-I$LIBFFI_BUILD_DIR/lib/libffi-3.2.1/include"
-    },
-    "LIBFFI_LIBS": {
-      "global": true,
-      "val": "-L$LIBFFI_BUILD_DIR/lib -lffi"
-    },
-    "LIBRARY_PATH": {
-      "global": true,
-      "resolveAsRelativePath": true,
-      "globalCollisionBehavior": "joinPath",
-      "val": "./_build/lib"
-    }
-  },
-  "dependencies": {
-    "nopam": "https://github.com/yunxing/nopam.git",
-    "dependency-env": "https://github.com/npm-ml/dependency-env.git"
+    "buildsInSource": true
   },
   "repository": {
     "type": "git",

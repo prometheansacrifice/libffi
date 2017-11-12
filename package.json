@@ -11,7 +11,7 @@
     "exportedEnv": {
       "LIBFFI_BUILD_DIR": {
         "scope": "global",
-        "val": "$libffi__install"
+        "val": "$esy_ocaml__slash__libffi__install"
       },
       "LIBFFI_CFLAGS": {
         "scope": "global",
@@ -23,7 +23,7 @@
       },
       "LIBRARY_PATH": {
         "scope": "global",
-        "val": "$libffi__install/lib:${LIBRARY_PATH}"
+        "val": "$esy_ocaml__slash__libffi__install/lib:${LIBRARY_PATH}"
       }
     },
     "buildsInSource": true

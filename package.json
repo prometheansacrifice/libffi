@@ -1,5 +1,5 @@
 {
-  "name": "libffi",
+  "name": "@esy-ocaml/libffi",
   "version": "3.2.10",
   "esy": {
     "build": [
@@ -23,7 +23,7 @@
       },
       "LIBRARY_PATH": {
         "scope": "global",
-        "val": "${libffi__install}/lib:${LIBRARY_PATH}"
+        "val": "$libffi__install/lib:${LIBRARY_PATH}"
       }
     },
     "buildsInSource": true
@@ -34,7 +34,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "zlib",
   "bugs": {
     "url": "https://github.com/libffi/libffi/issues"
   },

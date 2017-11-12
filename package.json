@@ -3,7 +3,10 @@
   "version": "3.2.10",
   "esy": {
     "build": [
-      "./configure --enable-shared=no --prefix $cur__install && make && make install"
+      "./configure --enable-shared=no --prefix $cur__install && make"
+    ],
+    "install": [
+      "make install"
     ],
     "exportedEnv": {
       "LIBFFI_BUILD_DIR": {
@@ -12,15 +15,15 @@
       },
       "LIBFFI_CFLAGS": {
         "scope": "global",
-        "val": "-I$LIBFFI_BUILD_DIR/lib/libffi-3.2.1/include"
+        "val": "-I${LIBFFI_BUILD_DIR}/lib/libffi-3.2.1/include"
       },
       "LIBFFI_LIBS": {
         "scope": "global",
-        "val": "-L$LIBFFI_BUILD_DIR/lib -lffi"
+        "val": "-L${LIBFFI_BUILD_DIR}/lib -lffi"
       },
       "LIBRARY_PATH": {
         "scope": "global",
-        "val": "$libffi__install/lib:$LIBRARY_PATH"
+        "val": "${libffi__install}/lib:${LIBRARY_PATH}"
       }
     },
     "buildsInSource": true

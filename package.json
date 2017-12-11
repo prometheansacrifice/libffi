@@ -1,3 +1,4 @@
+
 {
   "name": "@esy-ocaml/libffi",
   "version": "3.2.10",
@@ -11,19 +12,19 @@
     "exportedEnv": {
       "LIBFFI_BUILD_DIR": {
         "scope": "global",
-        "val": "$esy_ocaml__slash__libffi__install"
+        "val": "#{@esy-ocaml/libffi.install}"
       },
       "LIBFFI_CFLAGS": {
         "scope": "global",
-        "val": "-I${LIBFFI_BUILD_DIR}/lib/libffi-3.2.1/include"
+        "val": "-I#{@esy-ocaml/libffi.lib / 'libffi-3.2.1' / 'include'}"
       },
       "LIBFFI_LIBS": {
         "scope": "global",
-        "val": "-L${LIBFFI_BUILD_DIR}/lib -lffi"
+        "val": "-L#{@esy-ocaml/libffi.lib} -lffi"
       },
       "LIBRARY_PATH": {
         "scope": "global",
-        "val": "$esy_ocaml__slash__libffi__install/lib:${LIBRARY_PATH}"
+        "val": "#{@esy-ocaml/libffi.lib : $LIBRARY_PATH}"
       }
     },
     "buildsInSource": true
@@ -40,3 +41,4 @@
   },
   "homepage": "https://github.com/libffi/libffi#readme"
 }
+

@@ -1,10 +1,10 @@
-
 {
   "name": "@esy-ocaml/libffi",
   "version": "3.2.10",
   "esy": {
     "build": [
-      "./configure --enable-shared=no --prefix $cur__install && make"
+      "./configure --enable-shared=no --prefix $cur__install",
+      "make"
     ],
     "install": [
       "make install"
@@ -41,4 +41,3 @@
   },
   "homepage": "https://github.com/libffi/libffi#readme"
 }
-

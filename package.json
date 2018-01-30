@@ -3,7 +3,7 @@
   "version": "3.2.10",
   "esy": {
     "build": [
-      "./configure --enable-shared=no --prefix $cur__install",
+      "./configure --enable-shared --prefix $cur__install",
       "make"
     ],
     "install": [

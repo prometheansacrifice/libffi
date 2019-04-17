@@ -25,6 +25,10 @@
       "LIBRARY_PATH": {
         "scope": "global",
         "val": "#{@esy-ocaml/libffi.lib : $LIBRARY_PATH}"
+      },
+      "PKG_CONFIG_PATH": {
+        "scope": "global",
+        "val": "#{@esy-ocaml/libffi.lib / 'pkgconfig' : $PKG_CONFIG_PATH}"
       }
     },
     "buildsInSource": true
